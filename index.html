@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(/midia/fundo-craquelado.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgba(124, 124, 119, 0.714); 
+            background-blend-mode: overlay; 
+        }
+        .login-container {
+            color: #ffffff;
+            background-color: #00000049;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.993);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+        .login-container input {
+            background-color: #000000;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ffffff2e;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #ffffff;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            border: none;
+            border-radius: 4px;
+            color: #ffffff;
+            font-size: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ffffff29;
+        }
+        .login-container button:hover {
+            background-color: #eaf1a8;
+            color: rgb(0, 0, 0);
+        }
+        .login-container a {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .login-container a:hover {
+            color: rgb(158, 154, 154);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Usuário" required>
+            <input type="password" placeholder="Senha" required><br><br>
+            <button type="submit"><strong>Entrar</strong></button>
+            <br><br>
+            <div style="display: flex; justify-content: space-between;">
+            <a href="cadastrouser.html">Cadastrar</a>
+            <a href="trocarSenha.html">Trocar a senha</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        window.location.href = 'home.html';
+    });
+</script>

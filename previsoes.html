@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silber IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/midia/backgourd.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(51, 66, 118, 0.727); 
+            background-blend-mode: overlay; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #895050;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ffffff00;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            color: #000000;
+        }
+        nav {
+            width: 80%;
+            background-color: rgb(0, 0, 0);
+            box-shadow: 0 2px 2px rgb(255, 255, 255);
+            border-radius: 8px;
+            margin-bottom: px;
+            margin-top: 15px;
+
+        }
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .chat-header {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-bottom: 0px;
+            color: #ffffff;
+        }
+        .chat-header h1 {
+            border: 1px solid #ffffff71;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgb(0, 0, 0);
+    
+        }
+        .chat-messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #000000;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #000000;
+        }
+        .chat-messages div {
+            background-color: #ffff24b5;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .chat-input {
+            display: flex;
+            margin-top: 20px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #000000;
+            border-radius: 8px 0 0 8px;
+            outline: none;
+        }
+        .chat-input button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+        }
+        .chat-input button:hover {
+            background-color: #faf556;
+            color: #000000;
+            border: 1px solid #666666;
+        }
+        .menu-icon {
+            display: block;
+            font-size: 30px;
+            cursor: pointer;
+            color: #ffffff;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            
+        }
+        .menu-icon:hover + nav ul,
+        nav ul:hover {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                background-color: #000000;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 0;
+            }
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #ffffff;
+            }
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <span class="menu-icon">&#9776;</span>
+    <nav>
+        <ul style="list-style: none; padding:15px; justify-content: space-around; background-color: #000000a6; border-radius: 0px; margin-bottom: 0px;">
+            <li><a href="/home.html" style="text-decoration: none; color: #ffffff;"><strong>Assistente</strong></a></li>
+            <li><a href="/previsoes.html" style="text-decoration: none; color: #ffffff;"><strong>Previsões</strong></a></li>
+            <li><a href="/comunidade.html" style="text-decoration: none; color: #ffffff;"><strong>Comunidade</strong></a></li>
+            <li><a href="#configuration" style="text-decoration: none; color: #ffffff;"><strong>Configuração</strong></a></li>
+            <li><a href="/index.html" style="text-decoration: none; color: #ffffff;"><strong>voltar login</strong></a></li>
+        </ul>
+    </nav>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1><strong>Tempo Real</strong></h1>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+            <button onclick="sendMessage()"><strong>Enviar</strong></button>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messages = document.getElementById('chat-messages');
+            const message = input.value.trim();
+
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.textContent = message;
+                messages.appendChild(messageElement);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
