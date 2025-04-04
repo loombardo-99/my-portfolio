@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #000000, rgb(231, 226, 226));
+            color: #333;
+            
+        }
+
+        header {
+            background: linear-gradient(to right, #ffffffce, rgb(9, 9, 9));
+            color: rgb(0, 0, 0);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            backgrorgb(82, 23, 23)ient(to right, rgb(232, 19, 19), rgb(255, 123, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            border: 1px solid black;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            transition: color 0.1s ease, font-family 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            background-color: #000000;
+            font-family: 'Courier New', monospace;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #000000;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+            font-size: 2.4rem; /* Adjusted for better readability */
+        }
+
+        .project {
+            margin-bottom: 1.5rem;
+        }
+
+        .project h3 {
+            color: #2E7D32;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: #f4f4f4;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-gallery {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #000000;
+            color: white;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer p:first-child {
+            font-weight: bold;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 1rem;
+                margin: 1rem;
+            }
+
+            .image-gallery img {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .image-gallery img {
+                max-width: 100px;
+            }
+        }
+
+            .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-image {
+            min-width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .carousel-image:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem;
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-image {
+                min-width: 100%;
+            }
+
+            .carousel-image:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-button {
+                font-size: 1rem;
+                padding: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; margin: 7%; position: relative;">
+        <div>
+            <img src="midia/Design sem nome (9).png" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); position: absolute; bottom: -75px; left: 50%; transform: translateX(-50%);">
+        </div>
+    </div>
+    <header>
+        <nav style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem; margin-top:80px;">
+            <div style="display: flex; gap: 1rem;">
+                <a href="#about">Sobre Mim</a>
+                <a href="#projects">Projetos</a>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <a href="#technologies">Tecnologias</a>
+                <a href="#ai-images">Imagens AI</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>Sobre Mim</h2>
+        <p>Olá! Meu nome é Fernando. Sou um desenvolvedor apaixonado por tecnologia e inovação. Adoro criar soluções criativas e explorar novas ideias.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Meus Projetos</h2>
+        <div class="project">
+            <h3>Projeto 1</h3>
+            <p>Descrição do projeto 1.</p>
+        </div>
+        <div class="project">
+            <h3>Projeto 2</h3>
+            <p>Descrição do projeto 2.</p>
+        </div>
+    </section>
+
+    <section id="technologies">
+        <h2>Tecnologias que Eu Uso</h2>
+        <div>
+            <h3>Front-End</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Back-End</h3>
+            <ul>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>PHP</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Banco de Dados</h3>
+            <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="ai-images">
+        <h2>Imagens Criadas com AI</h2>
+        <div class="carousel-container">
+            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel">
+                <img src="midia/casa-chocolate.jpg" alt="Imagem AI 1" class="carousel-image">
+                <img src="midia/menino-galaxy.jpg" alt="Imagem AI 2" class="carousel-image">
+                <img src="midia/piramid.jpg" alt="Imagem AI 3" class="carousel-image">
+                <img src="midia/forest.jpg" alt="Imagem AI 4" class="carousel-image">
+                <img src="midia/cityscape.jpg" alt="Imagem AI 5" class="carousel-image">
+                <img src="midia/robot.jpg" alt="Imagem AI 6" class="carousel-image">
+            </div>
+            </div>
+            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const carousel = document.querySelector('.carousel');
+            const images = document.querySelectorAll('.carousel-image');
+            const totalImages = images.length;
+
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            if (currentIndex >= totalImages) {
+                currentIndex = 0;
+                carousel.style.transform = `translateX(0)`;
+            } else if (currentIndex < 0) {
+                currentIndex = totalImages - 1;
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            updateCarousel();
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 Meu Portfólio</p>
+        <div style="display: flex; justify-content: center; gap: 1rem;">
+            <a href="https://github.com" target="_blank" style="color: white; text-decoration: none;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;">GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/fernando-lombardo-junior-4a9b722a3/" target="_blank" style="color: white; text-decoration: none;">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style="width: 20px; vertical-align: middle; margin-right: 5px;">LinkedIn
+            </a>
+        </div>
+        <style>
+            footer a:hover {
+                color: yellow;
+            }
+        </style>
+    </footer>
+</body>
+</html>
