@@ -6,20 +6,21 @@
     <title>Portfólio</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #000000, rgb(231, 226, 226));
+            background-image: url(midia/fundo-estrelado2.jpg);
             color: #333;
-            
+            overflow-x: hidden; /* Prevents horizontal page expansion while allowing vertical scrolling */
         }
 
+
         header {
-            background: linear-gradient(to right, #ffffffce, rgb(9, 9, 9));
+            background-color: rgb(0, 0, 0);
             color: rgb(0, 0, 0);
             padding: 1rem 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(51, 253, 0, 0.873);
         }
 
         header h1 {
@@ -32,22 +33,22 @@
         }
 
         nav a {
-            backgrorgb(82, 23, 23)ient(to right, rgb(232, 19, 19), rgb(255, 123, 0));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
             text-decoration: none;
             margin: 0 1rem;
             font-weight: bold;
             font-family: 'Courier New', monospace;
-            border: 1px solid black;
+            border: 1px solid rgba(64, 255, 0, 0.61);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
-            transition: color 0.1s ease, font-family 0.2s ease;
+            transition: color 0.2s ease, font-family 0.3s ease, background-color 0.1s ease;
+            font-size: 15px;
         }
 
         nav a:hover {
-            color: #ffffff;
-            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(64, 255, 0);
+            background-color: rgb(0, 0, 0);
             font-family: 'Courier New', monospace;
         }
 
@@ -55,17 +56,30 @@
             padding: 2rem;
             margin: 2rem auto;
             max-width: 800px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 255, 0, 0.2));
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.5) inset;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+            box-shadow: 0 6px 12px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.5) inset;
+            }
+            100% {
+            box-shadow: 0 6px 12px rgba(0, 255, 0, 1), 0 0 30px rgba(0, 255, 0, 0.7) inset;
+            }
         }
 
         section h2 {
-            color: #000000;
+            color: #ffffff;
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
+            font-family: 'Courier New', monospace;
             font-size: 2.4rem; /* Adjusted for better readability */
         }
 
@@ -83,7 +97,8 @@
         }
 
         ul li {
-            background: #f4f4f4;
+            background: #000000;
+            color: rgb(5, 246, 5);
             margin: 0.5rem 0;
             padding: 0.5rem;
             border-radius: 4px;
@@ -103,11 +118,11 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
         }
 
         .image-gallery img:hover {
-            transform: scale(1.1);
+            transform: scale(1.0);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -115,7 +130,7 @@
             text-align: center;
             padding: 1rem 0;
             background-color: #000000;
-            color: white;
+            color: rgb(36, 148, 14);
             margin-top: 2rem;
             font-size: 0.9rem;
             box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
@@ -169,7 +184,7 @@
             }
         }
 
-            .carousel-container {
+        .carousel-container {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
@@ -203,14 +218,20 @@
             cursor: pointer;
             z-index: 10;
             font-size: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .carousel-button.prev {
-            left: 0;
+            left: 10px;
         }
 
         .carousel-button.next {
-            right: 0;
+            right: 10px;
+        }
+
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
         }
 
         @media (max-width: 768px) {
@@ -232,43 +253,87 @@
     </style>
 </head>
 <body>
-    <div style="text-align: center; margin: 7%; position: relative;">
-        <div>
-            <img src="midia/Design sem nome (9).png" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); position: absolute; bottom: -75px; left: 50%; transform: translateX(-50%);">
-        </div>
-    </div>
     <header>
-        <nav style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem; margin-top:80px;">
-            <div style="display: flex; gap: 1rem;">
-                <a href="#about">Sobre Mim</a>
-                <a href="#projects">Projetos</a>
-            </div>
-            <div style="display: flex; gap: 1rem;">
-                <a href="#technologies">Tecnologias</a>
-                <a href="#ai-images">Imagens AI</a>
-            </div>
+        <div style="text-align: center; margin: 2rem 0;"></div>
+            <img src="midia/Design sem nome (9).png" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 8px 12px rgb(255, 255, 255);">
+        </div>
+        <nav style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
+            <a href="#about">Sobre Mim</a>
+            <a href="#projects">Projetos</a>
+            <a href="#technologies">Tecnologias</a>
+            <a href="#ai-images">Imagens AI</a>
         </nav>
     </header>
 
     <section id="about">
         <h2>Sobre Mim</h2>
-        <p>Olá! Meu nome é Fernando. Sou um desenvolvedor apaixonado por tecnologia e inovação. Adoro criar soluções criativas e explorar novas ideias.</p>
+        <p>Desenvolvedor Full Stack apaixonado por transformar ideias em realidade através de soluções tecnológicas inovadoras. Possuo expertise em Front-end, Back-end e Banco de Dados, com experiência na criação de softwares, análise de dados e desenvolvimento de interfaces visuais. Busco uma oportunidade para aplicar minhas habilidades e contribuir para o sucesso de projetos desafiadores, impulsionando o crescimento da empresa.</p>
     </section>
 
     <section id="projects">
         <h2>Meus Projetos</h2>
-        <div class="project">
-            <h3>Projeto 1</h3>
-            <p>Descrição do projeto 1.</p>
+         <div class="project">
+            <h3>XD</h3>
+            <p>Chat interativo, feed infitino, cadastro de usuarios, apresentação de sistema</p>
+            <a href="https://example.com/previsao-clima" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <div class="project">
-            <h3>Projeto 2</h3>
-            <p>Descrição do projeto 2.</p>
+            <h3>Previsão clima</h3>
+            <p>Projeto usando API pública para receber dados da previsão do tempo</p>
+            <a href="https://example.com/previsao-clima" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
+        <div class="project">
+            <h3>Calculadora</h3>
+            <p>Calculadora funcional feita em JAVA usando PDO</p>
+            <a href="https://example.com/calculadora" target="_blank" class="matrix-link">Visitar Projeto</a>
+        </div>
+        <style>
+            .matrix-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #00ff00;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            padding: 0.3rem 0.6rem;
+            border: 1px solid #00ff00;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            .matrix-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.5), transparent);
+            transition: left 0.3s ease;
+            z-index: 1;
+            }
+
+            .matrix-link:hover::before {
+            left: 100%;
+            }
+
+            .matrix-link:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+            color: #ffffff;
+            box-shadow: 0 0 8px #00ff00, 0 0 15px #00ff00 inset;
+            }
+
+            .matrix-link span {
+            position: relative;
+            z-index: 2;
+            }
+        </style>
     </section>
 
     <section id="technologies">
-        <h2>Tecnologias que Eu Uso</h2>
+        <h2>Tecnologias</h2>
         <div>
             <h3>Front-End</h3>
             <ul>
@@ -299,17 +364,16 @@
     </section>
 
     <section id="ai-images">
-        <h2>Imagens Criadas com AI</h2>
+        <h2>Paginas</h2>
         <div class="carousel-container">
             <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
             <div class="carousel">
-                <img src="midia/casa-chocolate.jpg" alt="Imagem AI 1" class="carousel-image">
-                <img src="midia/menino-galaxy.jpg" alt="Imagem AI 2" class="carousel-image">
-                <img src="midia/piramid.jpg" alt="Imagem AI 3" class="carousel-image">
-                <img src="midia/forest.jpg" alt="Imagem AI 4" class="carousel-image">
-                <img src="midia/cityscape.jpg" alt="Imagem AI 5" class="carousel-image">
-                <img src="midia/robot.jpg" alt="Imagem AI 6" class="carousel-image">
-            </div>
+                <img src="midia/Captura-chat.png" alt="Imagem AI 1" class="carousel-image">
+                <img src="midia/robo-ai.jpg" alt="Imagem AI 2" class="carousel-image">
+                <img src="midia/gavião.jpg" alt="Imagem AI 3" class="carousel-image">
+                <img src="midia/linha-movimento2.jpg" alt="Imagem AI 4" class="carousel-image">
+                <img src="midia/arvore-jasmin-2.jpg" alt="Imagem AI 5" class="carousel-image">
+                <img src="midia/folhas-2.jpg" alt="Imagem AI 6" class="carousel-image">
             </div>
             <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
         </div>
@@ -354,11 +418,57 @@
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" style="width: 20px; vertical-align: middle; margin-right: 5px;">LinkedIn
             </a>
         </div>
-        <style>
-            footer a:hover {
-                color: yellow;
-            }
-        </style>
+        <p>Desenvolvido por Fernando Lombardo Junior</p>
     </footer>
+    <script>
+        const body = document.body;
+
+        body.addEventListener('mousemove', (e) => {
+            const matrixEffect = document.createElement('div');
+            matrixEffect.className = 'matrix-effect';
+            matrixEffect.style.left = `${e.pageX}px`;
+            matrixEffect.style.top = `${e.pageY}px`;
+            matrixEffect.textContent = Math.floor(Math.random() * 10); // Random number between 0-9
+            body.appendChild(matrixEffect);
+
+            setTimeout(() => {
+                matrixEffect.remove();
+            }, 1500); // Increased timeout for slower effect
+        });
+    </script>
+    <style>
+        .matrix-effect {
+            position: absolute;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+            opacity: 0.8;
+            pointer-events: none;
+            animation: matrix-fall 1.5s linear; /* Slower animation */
+        }
+
+        @keyframes matrix-fall {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .matrix-effect {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .matrix-effect {
+                font-size: 10px;
+            }
+        }
+    </style>
 </body>
 </html>
