@@ -88,7 +88,8 @@
         }
 
         .project h3 {
-            color: #2E7D32;
+            color: #02fe0e;
+            font-size: 35px;
         }
 
         ul {
@@ -254,6 +255,35 @@
 </head>
 <body>
     <header>
+        <button id="theme-toggle" style="background-color: #000; color: #00ff00; border: 1px solid #00ff00; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-family: 'Courier New', monospace; font-size: 1rem;">Mudar Tema</button>
+
+        <script>
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('dark-theme')) {
+                    body.classList.remove('dark-theme');
+                    body.style.backgroundImage = "url('midia/fundo-estrelado2.jpg')";
+                    body.style.color = '#333';
+                    themeToggle.style.backgroundColor = '#000';
+                    themeToggle.style.color = '#00ff00';
+                    themeToggle.textContent = 'Mudar Tema';
+                } else {
+                    body.classList.add('dark-theme');
+                    body.style.backgroundImage = "none";
+                    body.style.backgroundColor = '#000000';
+                    body.style.color = '#ffffff';
+                    themeToggle.style.backgroundColor = '#ffffff';
+                    themeToggle.style.color = '#000000';
+                    themeToggle.textContent = 'Tema Claro';
+
+                    // Add smooth transition effect
+                    body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+                    themeToggle.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+                }
+            });
+        </script>
         <div style="text-align: center; margin: 2rem 0;"></div>
             <img src="midia/Design sem nome (9).png" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 8px 12px rgb(255, 255, 255);">
         </div>
@@ -275,7 +305,7 @@
          <div class="project">
             <h3>XD</h3>
             <p>Chat interativo, feed infitino, cadastro de usuarios, apresentação de sistema</p>
-            <a href="https://example.com/previsao-clima" target="_blank" class="matrix-link">Visitar Projeto</a>
+            <a href="https://loombardo-99.github.io/XD/" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <div class="project">
             <h3>Previsão clima</h3>
@@ -283,9 +313,9 @@
             <a href="https://example.com/previsao-clima" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <div class="project">
-            <h3>Calculadora</h3>
-            <p>Calculadora funcional feita em JAVA usando PDO</p>
-            <a href="https://example.com/calculadora" target="_blank" class="matrix-link">Visitar Projeto</a>
+            <h3>SoundX</h3>
+            <p>Ambiente para postar, salvar, criar playlist e escutar musica</p>
+            <a href="https://loombardo-99.github.io/playone/" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <style>
             .matrix-link {
@@ -369,8 +399,8 @@
             <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
             <div class="carousel">
                 <img src="midia/Captura-chat.png" alt="Imagem AI 1" class="carousel-image">
-                <img src="midia/robo-ai.jpg" alt="Imagem AI 2" class="carousel-image">
-                <img src="midia/gavião.jpg" alt="Imagem AI 3" class="carousel-image">
+                <img src="midia/Captura de tela 2025-04-10 091105.png" alt="Imagem AI 2" class="carousel-image">
+                <img src="midia/Captura de tela 2025-04-10 091426.png" alt="Imagem AI 3" class="carousel-image">
                 <img src="midia/linha-movimento2.jpg" alt="Imagem AI 4" class="carousel-image">
                 <img src="midia/arvore-jasmin-2.jpg" alt="Imagem AI 5" class="carousel-image">
                 <img src="midia/folhas-2.jpg" alt="Imagem AI 6" class="carousel-image">
