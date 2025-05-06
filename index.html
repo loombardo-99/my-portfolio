@@ -256,33 +256,6 @@
 <body>
     <header>
         <button id="theme-toggle" style="background-color: #000; color: #00ff00; border: 1px solid #00ff00; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-family: 'Courier New', monospace; font-size: 1rem;">Mudar Tema</button>
-
-        <script>
-            const themeToggle = document.getElementById('theme-toggle');
-            const body = document.body;
-
-            themeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-theme')) {
-                    body.classList.remove('dark-theme');
-                    body.style.backgroundImage = "url('midia/fundo-estrelado2.jpg')";
-                    body.style.color = '#333';
-                    themeToggle.style.backgroundColor = '#000';
-                    themeToggle.style.color = '#00ff00';
-                    themeToggle.textContent = 'Mudar Tema';
-                } else {
-                    body.classList.add('dark-theme');
-                    body.style.backgroundImage = "none";
-                    body.style.backgroundColor = '#000000';
-                    body.style.color = '#ffffff';
-                    themeToggle.style.backgroundColor = '#ffffff';
-                    themeToggle.style.color = '#000000';
-                    themeToggle.textContent = 'Tema Claro';
-
-                    // Add smooth transition effect
-                    body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
-                    themeToggle.style.transition = 'background-color 0.5s ease, color 0.5s ease';
-                }
-            });
         </script>
         <div style="text-align: center; margin: 2rem 0;"></div>
             <img src="midia/Design sem nome (9).png" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 0 8px 12px rgb(255, 255, 255);">
@@ -308,9 +281,9 @@
             <a href="https://loombardo-99.github.io/XD/" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <div class="project">
-            <h3>Previsão clima</h3>
-            <p>Projeto usando API pública para receber dados da previsão do tempo</p>
-            <a href="https://loombardo-99.github.io/api-clima/" target="_blank" class="matrix-link">Visitar Projeto</a>
+            <h3>Cardapio digital</h3>
+            <p>html css JavaScript</p>
+            <a href="https://loombardo-99.github.io/project-cardapio/" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <div class="project">
             <h3>SoundX</h3>
@@ -319,7 +292,7 @@
         </div>
         <div class="project">
             <h3>Jogos</h3>
-            <p>mix de jogos</p>
+            <p>Mix de jogos</p>
             <a href="https://loombardo-99.github.io/joguinho/" target="_blank" class="matrix-link">Visitar Projeto</a>
         </div>
         <style>
