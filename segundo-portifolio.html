@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Universo Dev: Projetos, Paixão e Potencial!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #334155; /* Darker text for readability */
+        }
+        .typing-animation {
+            overflow: hidden; /* Ensures the text is hidden until typed */
+            white-space: nowrap; /* Keeps the text on a single line */
+            border-right: .15em solid #3b82f6; /* Blinking cursor effect */
+            animation:
+                typing 3.5s steps(40, end) forwards,
+                blink-caret .75s step-end infinite;
+        }
+
+        /* Typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Blinking cursor animation */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="text-center md:text-left mb-4 md:mb-0">
+                <h1 class="text-4xl font-bold mb-2 flex items-center justify-center md:justify-start">
+                    <i class="fas fa-code mr-3 text-blue-300"></i>
+                    <span class="typing-animation">Meu Universo Dev</span>
+                </h1>
+                <p class="text-xl font-light">Projetos, Paixão e Potencial!</p>
+            </div>
+            <nav class="flex space-x-6">
+                <a href="#about" class="text-white hover:text-blue-200 transition duration-300 ease-in-out font-medium">Sobre Mim</a>
+                <a href="#projects" class="text-white hover:text-blue-200 transition duration-300 ease-in-out font-medium">Projetos</a>
+                <a href="#skills" class="text-white hover:text-blue-200 transition duration-300 ease-in-out font-medium">Habilidades</a>
+                <a href="#contact" class="text-white hover:text-blue-200 transition duration-300 ease-in-out font-medium">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto p-6 space-y-12">
+
+        <section id="about" class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-blue-500 animate-fade-in">
+            <h2 class="text-3xl font-bold text-blue-700 mb-6 flex items-center">
+                <i class="fas fa-user-tie mr-3 text-blue-400"></i>
+                Sobre Mim
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Olá! Sou um programador com uma paixão ardente por transformar ideias em realidade através do código. Minha jornada no mundo do desenvolvimento web é movida por uma curiosidade insaciável e uma vontade imensa de aprender e crescer a cada dia.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Sou uma pessoa que equilibra seriedade e diversão. No trabalho, sou focado, detalhista e comprometido com a entrega de soluções de alta qualidade. Fora dele, adoro passar tempo com minha família, que é minha maior inspiração. Acredito que a programação é uma arte e uma ferramenta poderosa para construir um futuro melhor, tanto para o mundo digital quanto para aqueles que amo.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        Estou em busca da minha primeira oportunidade profissional, pronto para mergulhar de cabeça em novos desafios, absorver conhecimento e contribuir com equipes inovadoras. Minha dedicação e entusiasmo são meus maiores ativos!
+                    </p>
+                </div>
+                <div class="flex justify-center items-center">
+                    <img src="https://placehold.co/300x300/60a5fa/ffffff?text=Sou+Eu!+%F0%9F%92%BB" alt="Imagem de um desenvolvedor trabalhando com paixão" class="rounded-full shadow-xl border-4 border-blue-400 w-48 h-48 object-cover transform transition-transform duration-500 hover:scale-105">
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-500 animate-fade-in">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-8 flex items-center">
+                <i class="fas fa-laptop-code mr-3 text-indigo-400"></i>
+                Meus Projetos
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200">
+                    <img src="https://placehold.co/400x250/3b82f6/ffffff?text=Produtividade+para+Freelancers" alt="Imagem de um painel de gestão de tarefas" class="w-full h-40 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">TaskFlow: Gestão de Projetos Ágil</h3>
+                    <p class="text-gray-600 text-sm mb-4">Desenvolvi uma plataforma intuitiva para freelancers e pequenas equipes organizarem suas tarefas, acompanharem prazos e colaborarem de forma eficiente. O foco é otimizar a produtividade e reduzir o estresse diário.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MongoDB</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://demo.taskflowapp.com" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fas fa-eye mr-2"></i> Ver Demo
+                        </a>
+                        <a href="https://github.com/yourusername/taskflow-project" target="_blank" class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200">
+                    <img src="https://placehold.co/400x250/10b981/ffffff?text=Feito+a+Mao+com+Amor" alt="Imagem de uma loja de artesanato online" class="w-full h-40 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Artesania Online: Mercado Local</h3>
+                    <p class="text-gray-600 text-sm mb-4">Criei um e-commerce vibrante para conectar artesãos locais com compradores, permitindo que pequenos produtores vendam suas criações únicas. O projeto visa fortalecer a economia criativa e dar visibilidade a talentos da comunidade.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                        <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://demo.artesaniaonline.com" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fas fa-eye mr-2"></i> Ver Demo
+                        </a>
+                        <a href="https://github.com/yourusername/artesania-ecommerce" target="_blank" class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200">
+                    <img src="https://placehold.co/400x250/ef4444/ffffff?text=Sabores+da+Familia" alt="Imagem de um aplicativo de receitas com comida deliciosa" class="w-full h-40 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Meu Caderno de Receitas Digital</h3>
+                    <p class="text-gray-600 text-sm mb-4">Um aplicativo que permite aos usuários guardar, organizar e compartilhar suas receitas favoritas, desde pratos da família até novas descobertas culinárias. Um verdadeiro companheiro para quem ama cozinhar e explorar sabores.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">CSS</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://demo.receitasdigitais.com" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fas fa-eye mr-2"></i> Ver Demo
+                        </a>
+                        <a href="https://github.com/yourusername/receitas-app" target="_blank" class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-200">
+                    <img src="https://placehold.co/400x250/9333ea/ffffff?text=Conferencia+Tech" alt="Imagem de uma landing page de conferência de tecnologia" class="w-full h-40 object-cover rounded-md mb-4 shadow-sm">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">DevConnect: Landing Page de Conferências</h3>
+                    <p class="text-gray-600 text-sm mb-4">Uma landing page dinâmica e responsiva, projetada para promover conferências e meetups de tecnologia. Inclui seções para palestrantes, agenda, formulário de inscrição e contagem regressiva, otimizando a divulgação de eventos.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-fuchsia-100 text-fuchsia-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                        <span class="bg-cyan-100 text-cyan-800 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <a href="https://demo.devconnect.com" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fas fa-eye mr-2"></i> Ver Demo
+                        </a>
+                        <a href="https://github.com/yourusername/devconnect-landingpage" target="_blank" class="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-300 ease-in-out text-sm font-medium flex items-center">
+                            <i class="fab fa-github mr-2"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="skills" class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-emerald-500 animate-fade-in">
+            <h2 class="text-3xl font-bold text-emerald-700 mb-6 flex items-center">
+                <i class="fas fa-brain mr-3 text-emerald-400"></i>
+                Habilidades e Aprendizado Contínuo
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Tecnologias que Domino:</h3>
+                    <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                        <li><i class="fab fa-html5 text-orange-500 mr-2"></i> HTML5 & CSS3 (com Tailwind CSS)</li>
+                        <li><i class="fab fa-js-square text-yellow-500 mr-2"></i> JavaScript (ES6+)</li>
+                        <li><i class="fab fa-react text-blue-500 mr-2"></i> React.js</li>
+                        <li><i class="fab fa-node-js text-green-500 mr-2"></i> Node.js</li>
+                        <li><i class="fas fa-database text-gray-500 mr-2"></i> Bancos de Dados (MongoDB, MySQL)</li>
+                        <li><i class="fab fa-git-alt text-red-500 mr-2"></i> Git & GitHub</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Sede de Conhecimento:</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Estou sempre em busca de novos desafios e tecnologias para aprender. Atualmente, estou explorando:
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                        <li><i class="fab fa-python text-blue-600 mr-2"></i> Python e frameworks como Django/Flask</li>
+                        <li><i class="fab fa-aws text-orange-400 mr-2"></i> Cloud Computing (AWS/GCP)</li>
+                        <li><i class="fas fa-mobile-alt text-purple-500 mr-2"></i> Desenvolvimento Mobile (React Native)</li>
+                    </ul>
+                    <p class="text-lg leading-relaxed mt-4">
+                        Acredito que o aprendizado contínuo é a chave para a inovação e estou pronto para absorver tudo o que puder em um ambiente de equipe.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-purple-500 animate-fade-in">
+            <h2 class="text-3xl font-bold text-purple-700 mb-6 flex items-center">
+                <i class="fas fa-envelope mr-3 text-purple-400"></i>
+                Vamos Conectar!
+            </h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Se você gostou do que viu e acredita que meu entusiasmo, dedicação e habilidades podem agregar valor à sua equipe, adoraria conversar!
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <a href="mailto:seuemail@example.com" class="bg-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center text-lg font-medium">
+                    <i class="fas fa-paper-plane mr-3"></i> Enviar um E-mail
+                </a>
+                <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" class="bg-blue-800 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-900 transition duration-300 ease-in-out transform hover:scale-105 flex items-center text-lg font-medium">
+                    <i class="fab fa-linkedin mr-3"></i> Conectar no LinkedIn
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" class="bg-gray-900 text-white px-6 py-3 rounded-full shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105 flex items-center text-lg font-medium">
+                    <i class="fab fa-github mr-3"></i> Meu GitHub
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 mt-12 rounded-t-xl shadow-inner">
+        <div class="container mx-auto text-center text-sm">
+            <p>&copy; <span id="current-year"></span> Meu Universo Dev. Construindo o futuro, linha por linha, com paixão e dedicação.</p>
+            <p class="mt-2 text-gray-400">Feito com <i class="fas fa-heart text-red-500 mx-1"></i> e muito código.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Simple animation for sections on scroll (optional, can be expanded with Intersection Observer)
+        const sections = document.querySelectorAll('section');
+        const fadeIn = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver(fadeIn, {
+            root: null,
+            threshold: 0.1, // Trigger when 10% of the section is visible
+            rootMargin: "0px"
+        });
+
+        sections.forEach(section => {
+            section.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'ease-out');
+            sectionObserver.observe(section);
+        });
+
+        // Typing animation for the main title
+        document.addEventListener('DOMContentLoaded', () => {
+            const typingElement = document.querySelector('.typing-animation');
+            if (typingElement) {
+                // Reset animation by re-adding classes if needed, or ensure it runs once
+                typingElement.style.width = '0';
+                typingElement.style.animation = 'none'; // Reset animation
+                void typingElement.offsetWidth; // Trigger reflow
+                typingElement.style.animation = 'typing 3.5s steps(40, end) forwards, blink-caret .75s step-end infinite';
+            }
+        });
+    </script>
+</body>
+</html>
