@@ -706,6 +706,127 @@
                 font-size: 12px; /* Tamanho da fonte ajustado */
             }
         }
+
+        /* Estilos da Galeria e Lightbox */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--box-shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none; /* Começa escondido */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .lightbox.show {
+            display: flex; /* Mostra o lightbox */
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 85vw;
+            max-height: 85vh;
+            text-align: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 30px var(--primary-color);
+        }
+
+        #lightbox-caption {
+            color: #fff;
+            margin-top: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+
+        .lightbox-close, .lightbox-prev, .lightbox-next {
+            position: absolute;
+            cursor: pointer;
+            color: #fff;
+            font-size: 2.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 30px;
+        }
+
+        .lightbox-prev {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
@@ -724,13 +845,15 @@
             <a href="#about">Sobre Mim</a>
             <a href="#projects">Projetos</a>
             <a href="#technologies">Tecnologias</a>
-            <a href="#ai-images">Páginas/Imagens</a>
+            <a href="#ai-lab">Laboratório Criativo</a>
         </nav>
     </header>
 
     <section id="about">
         <h2>Sobre Mim</h2>
-        <p>Desenvolvedor Full Stack apaixonado por transformar ideias em realidade através de soluções tecnológicas inovadoras. Possuo expertise em Front-end, Back-end e Banco de Dados, com experiência na criação de softwares, análise de dados e desenvolvimento de interfaces visuais. Busco uma oportunidade para aplicar minhas habilidades e contribuir para o sucesso de projetos desafiadores, impulsionando o crescimento da empresa.</p>
+        <p><strong>Desenvolvedor de Software e Analista de Dados</strong> focado em criar soluções inovadoras e de alto impacto. Acredito que o desenvolvimento de excelência é impulsionado por uma profunda capacidade analítica, utilizando dados para entender o problema e desenhar a estratégia mais eficaz.</p>
+        <p>No meu processo, emprego ferramentas de ponta para executar com precisão e performance. Meu ambiente de desenvolvimento é otimizado com o <strong>Gemini CLI</strong>, que acelera a implementação e garante um código de alta qualidade, permitindo-me focar na lógica de negócio e na resolução de problemas complexos. Para a concepção de interfaces e prototipagem, exploro ativamente os laboratórios de IA do Google, como o <strong>ImageFX</strong>, para transformar conceitos em realidade visual de forma ágil.</p>
+        <p>Sou movido pela determinação em superar desafios e por um foco claro nos objetivos do projeto. Busco uma oportunidade onde eu possa aplicar essa sinergia entre análise e desenvolvimento para construir produtos que não apenas funcionem, mas que gerem valor real e façam a diferença.</p>
     </section>
 
     <section id="projects">
@@ -779,6 +902,16 @@
                 <p>Uma coleção de jogos desenvolvidos para entretenimento e demonstração de habilidades. <br> <strong>(Em Manutenção)</strong></p>
                 <a href="https://loombardo-99.github.io/joguinho/" target="_blank" class="matrix-link">Visitar Projeto <i class="fas fa-external-link-alt"></i></a>
             </div>
+            <div class="project-card">
+                <h3>Portfólio de Barbearia</h3>
+                <p>Um site de portfólio para uma barbearia com atendimento a domicílio.</p>
+                <a href="https://loombardo-99.github.io/portfolio-barber-domicilio/" target="_blank" class="matrix-link">Visitar Projeto <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="project-card">
+                <h3>Blog de Tecnologia</h3>
+                <p>Um blog para postar artigos e notícias sobre tecnologia.</p>
+                <a href="https://loombardo-99.github.io/blog-tecnologia/" target="_blank" class="matrix-link">Visitar Projeto <i class="fas fa-external-link-alt"></i></a>
+            </div>
         </div>
     </section>
 
@@ -817,21 +950,46 @@
         </div>
     </section>
 
-    <section id="ai-images">
-        <h2>Páginas / Imagens</h2>
-        <div class="carousel-container">
-            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
-            <div class="carousel">
-                <img src="midia/fundo-estrelado2.jpg" alt="Página AI 1" class="carousel-image">
-                <img src="midia/robo-ai.jpg" alt="Página AI 2" class="carousel-image">
-                <img src="midia/Captura de tela 2025-04-10 091105.png" alt="Página AI 3" class="carousel-image">
-                <img src="midia/Captura de tela 2025-04-10 091426.png" alt="Página AI 4" class="carousel-image">
-                <img src="midia/flor-deserto.jpg" alt="Página AI 5" class="carousel-image">
-                <img src="midia/Captura-chat.png" alt="Página AI 6" class="carousel-image">
+    <section id="ai-lab">
+        <h2>Laboratório Criativo com IA</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-caption="Conceito de um universo estrelado, gerado com ImageFX.">
+                <img src="midia/fundo-estrelado2.jpg" alt="Universo estrelado gerado por IA">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
             </div>
-            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+            <div class="gallery-item" data-caption="Protótipo de um robô para um projeto de game, gerado com ImageFX.">
+                <img src="midia/robo-ai.jpg" alt="Robô gerado por IA">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-caption="Interface de um sistema de análise de dados.">
+                <img src="midia/Captura de tela 2025-04-10 091105.png" alt="Dashboard de sistema">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-caption="Dashboard de monitoramento de performance.">
+                <img src="midia/Captura de tela 2025-04-10 091426.png" alt="Dashboard de monitoramento">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-caption="Arte conceitual de uma flor no deserto, gerada com ImageFX.">
+                <img src="midia/flor-deserto.jpg" alt="Flor no deserto gerada por IA">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item" data-caption="Interface de um chat interativo.">
+                <img src="midia/Captura-chat.png" alt="Interface de chat">
+                <div class="overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
         </div>
     </section>
+
+    <!-- Lightbox Structure -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <span class="lightbox-prev">&#10094;</span>
+        <span class="lightbox-next">&#10095;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Imagem em destaque" id="lightbox-img">
+            <div id="lightbox-caption"></div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Meu Portfólio</p>
@@ -861,7 +1019,9 @@
             } else if (currentIndex < 0) { // Se o índice for menor que 0, vai para a última imagem
                 currentIndex = totalImages - 1;
             }
-            carousel.style.transform = `translateX(-${currentIndex * 100}%)`; // Move o carrossel horizontalmente
+            if (carousel) {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`; // Move o carrossel horizontalmente
+            }
         }
 
         function nextSlide() { // Função para avançar para a próxima imagem
@@ -873,6 +1033,64 @@
             currentIndex--; // Decrementa o índice
             updateCarousel(); // Atualiza o carrossel
         }
+
+        // --- Novo JavaScript para a Galeria Lightbox ---
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+
+        let currentGalleryIndex = 0;
+
+        function openLightbox(index) {
+            currentGalleryIndex = index;
+            const item = galleryItems[currentGalleryIndex];
+            const imgSrc = item.querySelector('img').src;
+            const caption = item.getAttribute('data-caption');
+            
+            lightboxImg.src = imgSrc;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.add('show');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+        }
+
+        function showPrevImage() {
+            currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+            openLightbox(currentGalleryIndex);
+        }
+
+        function showNextImage() {
+            currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+            openLightbox(currentGalleryIndex);
+        }
+
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
+        });
+
+        closeBtn.addEventListener('click', closeLightbox);
+        prevBtn.addEventListener('click', showPrevImage);
+        nextBtn.addEventListener('click', showNextImage);
+
+        // Fechar com a tecla Esc
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+                closeLightbox();
+            }
+        });
+
+        // Fechar clicando fora da imagem
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
 
         // JavaScript para o efeito Matrix no mouse
         const body = document.body; // Seleciona o elemento body do documento
@@ -944,8 +1162,7 @@
             if (savedTheme === 'matrix') { // Se o tema salvo for 'matrix'
                 body.classList.add('matrix-theme'); // Adiciona a classe 'matrix-theme' ao body
             }
-            // Inicializa o carrossel
-            updateCarousel(); // Chama a função para inicializar o carrossel
+            // Inicializa o tema e as partículas
             updateThemeButton(); // Atualiza o ícone e texto do botão de tema na carga inicial
 
             // Adiciona partículas de fundo
