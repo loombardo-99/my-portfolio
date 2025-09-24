@@ -1,0 +1,893 @@
+
+        /* Variáveis CSS para o Tema Principal (Claro) */
+        :root { /* Define variáveis CSS globais para o tema padrão (claro) */
+            --background-color: #F8F8F8; /* Fundo muito claro, quase branco */
+            --text-color: #333333; /* Texto escuro suave */
+            --primary-color: #607D8B; /* Azul-acinzentado suave para tema claro (agora primary-color) */
+            --darker-primary-color: #455A64;   /* Azul-acinzentado mais escuro para hover */
+            --header-bg: rgba(255, 255, 255, 0.98); /* Fundo do cabeçalho quase opaco branco */
+            --section-bg-start: rgba(255, 255, 255, 0.95); /* Início do gradiente de fundo das seções */
+            --section-bg-end: rgba(245, 248, 250, 0.8); /* Fim do gradiente de fundo das seções (muito sutil) */
+            --box-shadow-color: rgba(96, 125, 139, 0.1); /* Sombra sutil do azul-acinzentado */
+            --box-shadow-inset-color: rgba(96, 125, 139, 0.05); /* Sombra interna sutil */
+            --border-color: rgba(96, 125, 139, 0.3); /* Borda mais definida */
+            --link-hover-bg: rgba(96, 125, 139, 0.05); /* Fundo de hover suave para links */
+            --footer-color: #555555; /* Cor escura para o rodapé */
+            --project-link-shadow: #607D8B; /* Azul-acinzentado para sombra do link de projeto */
+            --invert-icon: 1; /* Inverte ícones (1 para tema claro, 0 para tema escuro) */
+            --text-glow-shadow: none; /* Remove sombra de texto para o tema claro */
+            --heading-glow-shadow: none; /* Remove sombra de título para o tema claro */
+            --particle-color: #B0C4DE; /* Light steel blue para partículas no tema claro */
+        }
+
+        /* Tema Matrix (antigo tema escuro) */
+        body.matrix-theme { /* Estilos aplicados quando a classe 'matrix-theme' está no body */
+            --background-color: #0d1117; /* Fundo escuro */
+            --text-color: #e6edf3; /* Texto claro */
+            --primary-color: #00ff00; /* Verde vibrante para detalhes */
+            --darker-primary-color: #008000; /* Verde mais escuro */
+            --header-bg: rgba(1, 1, 1, 0.9); /* Fundo do cabeçalho semi-transparente */
+            --section-bg-start: rgba(0, 0, 0, 0.8); /* Início do gradiente de fundo das seções */
+            --section-bg-end: rgba(0, 255, 0, 0.2); /* Fim do gradiente de fundo das seções */
+            --box-shadow-color: rgba(0, 255, 0, 0.8); /* Sombra vibrante */
+            --box-shadow-inset-color: rgba(0, 255, 0, 0.5); /* Sombra interna */
+            --border-color: rgba(0, 255, 0, 0.61); /* Borda verde */
+            --link-hover-bg: rgba(0, 255, 0, 0.1); /* Fundo de hover verde */
+            --footer-color: rgb(36, 148, 14); /* Cor do rodapé verde */
+            --project-link-shadow: #00ff00; /* Sombra do link de projeto verde */
+            --invert-icon: 0; /* Não inverte ícones para tema escuro */
+            --text-glow-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Sombra de texto para o tema escuro */
+            --heading-glow-shadow: 0 0 12px var(--primary-color); /* Sombra de título para o tema escuro */
+            --particle-color: var(--primary-color); /* Cor das partículas no tema escuro */
+        }
+
+        body { /* Estilos base para o corpo da página */
+            font-family: 'Inter', sans-serif; /* Define a fonte principal */
+            margin: 0; /* Remove margem padrão do body */
+            padding: 0; /* Remove padding padrão do body */
+            background-color: var(--background-color); /* Usa a cor de fundo da variável do tema atual */
+            color: var(--text-color); /* Usa a cor do texto da variável do tema atual */
+            overflow-x: hidden; /* Previne rolagem horizontal da página */
+            transition: background-color 0.5s ease, color 0.5s ease; /* Transição suave para mudança de tema */
+            position: relative; /* Necessário para o posicionamento do efeito de fundo */
+        }
+
+        /* Efeito de fundo de partículas */
+        .background-particles { /* Contêiner para as partículas de fundo */
+            position: fixed; /* Fixa o contêiner na tela */
+            top: 0; /* Alinha ao topo */
+            left: 0; /* Alinha à esquerda */
+            width: 100%; /* Ocupa 100% da largura */
+            height: 100%; /* Ocupa 100% da altura */
+            pointer-events: none; /* Ignora eventos do mouse para não interferir na interação */
+            z-index: -1; /* Coloca as partículas atrás do conteúdo principal */
+            overflow: hidden; /* Esconde qualquer partícula que saia do contêiner */
+        }
+
+        .particle { /* Estilos para cada partícula individual */
+            position: absolute; /* Posicionamento absoluto dentro do contêiner */
+            background-color: var(--particle-color); /* Usa a cor da partícula da variável do tema */
+            border-radius: 50%; /* Torna a partícula redonda */
+            opacity: 0; /* Começa invisível */
+            animation: particle-fade-in-out 10s infinite ease-in-out; /* Aplica a animação de fade */
+        }
+
+        @keyframes particle-fade-in-out { /* Animação para as partículas */
+            0% { opacity: 0; transform: scale(0); } /* Começa invisível e pequeno */
+            20% { opacity: 0.2; transform: scale(1); } /* Fica visível e cresce */
+            80% { opacity: 0.1; transform: scale(0.8); } /* Diminui um pouco e fica menos visível */
+            100% { opacity: 0; transform: scale(0); } /* Volta a ser invisível e pequeno */
+        }
+
+        header { /* Estilos para o cabeçalho da página */
+            background-color: var(--header-bg); /* Usa a cor de fundo do cabeçalho da variável do tema */
+            padding: 1.5rem 0; /* Padding superior e inferior */
+            text-align: center; /* Centraliza o texto */
+            box-shadow: 0 4px 10px var(--box-shadow-color); /* Sombra abaixo do cabeçalho */
+        }
+
+        header h1 { /* Estilos para o título principal no cabeçalho */
+            margin: 0; /* Remove margem padrão */
+            font-size: 2.8rem; /* Tamanho da fonte */
+            color: var(--primary-color); /* Usa a cor primária do tema */
+            font-family: 'Courier Prime', monospace; /* Fonte específica para o título */
+            text-shadow: var(--heading-glow-shadow); /* Aplica sombra de brilho (se houver) */
+        }
+
+        .profile-section { /* Seção da foto de perfil */
+            text-align: center; /* Centraliza o conteúdo */
+            margin: 2rem 0; /* Margem superior e inferior */
+            position: relative; /* Para posicionamento de elementos internos */
+        }
+
+        .profile-section img { /* Estilos para a imagem de perfil */
+            width: 180px; /* Largura da imagem */
+            height: 180px; /* Altura da imagem */
+            border-radius: 50%; /* Torna a imagem redonda */
+            border: 4px solid var(--primary-color); /* Borda colorida */
+            box-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color) inset; /* Sombra externa e interna */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave para hover */
+            object-fit: cover; /* Garante que a imagem preencha o círculo */
+        }
+
+        .profile-section img:hover { /* Efeito de hover na imagem de perfil */
+            transform: scale(1.05) rotate(5deg); /* Aumenta e gira ligeiramente */
+            box-shadow: 0 0 30px var(--primary-color), 0 0 60px var(--primary-color) inset; /* Aumenta o brilho da sombra */
+        }
+
+        nav { /* Estilos para a barra de navegação */
+            display: flex; /* Usa flexbox para layout */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            align-items: center; /* Centraliza os itens verticalmente */
+            flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+            gap: 1.8rem; /* Espaçamento entre os itens */
+            margin-top: 1.5rem; /* Margem superior */
+        }
+
+        nav a { /* Estilos para os links de navegação */
+            color: var(--text-color); /* Cor do texto do link */
+            text-decoration: none; /* Remove sublinhado */
+            font-weight: bold; /* Negrito */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            border: 1px solid var(--border-color); /* Borda do link */
+            padding: 0.6rem 1.2rem; /* Padding interno */
+            border-radius: 8px; /* Cantos arredondados */
+            transition: all 0.3s ease; /* Transição suave para todos os estados */
+            font-size: 1.1rem; /* Tamanho da fonte */
+            position: relative; /* Para o efeito de brilho */
+            overflow: hidden; /* Esconde o excesso do efeito de brilho */
+            background-color: transparent; /* Fundo transparente */
+        }
+
+        nav a::before { /* Pseudo-elemento para o efeito de brilho ao passar o mouse */
+            content: ''; /* Conteúdo vazio */
+            position: absolute; /* Posicionamento absoluto */
+            top: 0; /* Alinha ao topo */
+            left: -100%; /* Começa fora da tela à esquerda */
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent); /* Gradiente de brilho */
+            transition: left 0.4s ease; /* Transição suave para o movimento */
+            z-index: 1; /* Acima do texto do link */
+            opacity: 0.3; /* Transparência do brilho */
+        }
+
+        nav a:hover::before { /* Efeito de brilho ao passar o mouse */
+            left: 100%; /* Move o brilho para a direita */
+        }
+
+        nav a:hover { /* Estilos de hover para links de navegação */
+            color: var(--primary-color); /* Cor do texto do link no hover */
+            border-color: var(--primary-color); /* Cor da borda no hover */
+            background-color: var(--link-hover-bg); /* Cor de fundo no hover */
+            box-shadow: 0 0 15px var(--primary-color); /* Sombra no hover */
+            transform: translateY(-3px); /* Move ligeiramente para cima */
+        }
+
+        section { /* Estilos para cada seção principal da página */
+            padding: 3rem 2rem; /* Padding interno */
+            margin: 2.5rem auto; /* Margem superior/inferior e centralização horizontal */
+            max-width: 900px; /* Largura máxima */
+            background: linear-gradient(135deg, var(--section-bg-start), var(--section-bg-end)); /* Gradiente de fundo */
+            border-radius: 16px; /* Cantos arredondados */
+            box-shadow: 0 8px 20px var(--box-shadow-color), 0 0 30px var(--box-shadow-inset-color) inset; /* Sombra externa e interna */
+            color: var(--text-color); /* Cor do texto */
+            font-family: 'Inter', sans-serif; /* Fonte */
+            text-shadow: var(--text-glow-shadow); /* Sombra de texto (se houver) */
+            animation: glow 2s infinite alternate; /* Animação de brilho (apenas para o tema Matrix) */
+            position: relative; /* Para posicionamento de elementos internos */
+            overflow: hidden; /* Esconde o excesso */
+        }
+
+        /* Remove a animação de brilho para o tema claro por padrão */
+        body:not(.matrix-theme) section { /* Aplica a sections que NÃO têm a classe matrix-theme */
+            animation: none; /* Remove a animação */
+        }
+
+        @keyframes glow { /* Animação de brilho para seções (Tema Matrix) */
+            0% {
+                box-shadow: 0 8px 20px var(--box-shadow-color), 0 0 30px var(--box-shadow-inset-color) inset;
+            }
+            100% {
+                box-shadow: 0 8px 25px var(--primary-color), 0 0 40px rgba(0, 255, 0, 0.7) inset;
+            }
+        }
+
+        section h2 { /* Estilos para os títulos de cada seção */
+            color: var(--primary-color); /* Cor do título */
+            border-bottom: 3px solid var(--primary-color); /* Borda inferior */
+            padding-bottom: 0.8rem; /* Padding abaixo da borda */
+            margin-bottom: 2rem; /* Margem inferior */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            font-size: 2.8rem; /* Tamanho da fonte */
+            text-align: center; /* Centraliza o texto */
+            text-shadow: var(--heading-glow-shadow); /* Sombra de título (se houver) */
+        }
+
+        section p { /* Estilos para parágrafos dentro das seções */
+            line-height: 1.8; /* Altura da linha para melhor leitura */
+            font-size: 1.1rem; /* Tamanho da fonte */
+            color: var(--text-color); /* Cor do texto */
+        }
+
+        .project-grid { /* Layout de grade para os projetos */
+            display: grid; /* Usa grid para layout */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Colunas responsivas */
+            gap: 2rem; /* Espaçamento entre os itens da grade */
+            margin-top: 2rem; /* Margem superior */
+        }
+
+        .project-card { /* Estilos para cada cartão de projeto */
+            background-color: var(--header-bg); /* Fundo do cartão */
+            border: 1px solid var(--border-color); /* Borda */
+            border-radius: 12px; /* Cantos arredondados */
+            padding: 1.5rem; /* Padding interno */
+            box-shadow: 0 4px 15px var(--box-shadow-color); /* Sombra */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+            display: flex; /* Usa flexbox para o conteúdo interno */
+            flex-direction: column; /* Organiza o conteúdo em coluna */
+            justify-content: space-between; /* Espaça o conteúdo */
+            overflow: hidden; /* Esconde o excesso */
+            position: relative; /* Para o pseudo-elemento */
+        }
+
+        .project-card::before { /* Pseudo-elemento para o efeito de brilho no cartão */
+            content: ''; /* Conteúdo vazio */
+            position: absolute; /* Posicionamento absoluto */
+            top: 0; /* Alinha ao topo */
+            left: 0; /* Alinha à esquerda */
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            background: radial-gradient(circle at top left, var(--link-hover-bg), transparent 70%); /* Gradiente radial */
+            opacity: 0; /* Começa invisível */
+            transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+            z-index: 0; /* Atrás do conteúdo */
+        }
+
+        .project-card:hover::before { /* Efeito de brilho no hover do cartão */
+            opacity: 1; /* Torna o brilho visível */
+        }
+
+        .project-card:hover { /* Estilos de hover para o cartão de projeto */
+            transform: translateY(-8px); /* Move ligeiramente para cima */
+            box-shadow: 0 8px 25px var(--primary-color); /* Aumenta a sombra */
+        }
+
+        .project-card h3 { /* Título do projeto no cartão */
+            color: var(--primary-color); /* Cor do título */
+            font-size: 1.8rem; /* Tamanho da fonte */
+            margin-top: 0; /* Remove margem superior */
+            margin-bottom: 1rem; /* Margem inferior */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            text-shadow: var(--heading-glow-shadow); /* Sombra de título (se houver) */
+            position: relative; /* Para z-index */
+            z-index: 1; /* Acima do pseudo-elemento */
+        }
+
+        .project-card p { /* Parágrafo de descrição do projeto */
+            color: var(--text-color); /* Cor do texto */
+            font-size: 1rem; /* Tamanho da fonte */
+            line-height: 1.6; /* Altura da linha */
+            flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+            position: relative; /* Para z-index */
+            z-index: 1; /* Acima do pseudo-elemento */
+        }
+
+        .project-card .matrix-link { /* Link "Visitar Projeto" */
+            display: inline-block; /* Comporta-se como bloco, mas permite outros elementos na mesma linha */
+            margin-top: 1.5rem; /* Margem superior */
+            color: var(--primary-color); /* Cor do texto */
+            text-decoration: none; /* Remove sublinhado */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            font-weight: bold; /* Negrito */
+            position: relative; /* Para o pseudo-elemento */
+            overflow: hidden; /* Esconde o excesso do pseudo-elemento */
+            padding: 0.6rem 1.2rem; /* Padding interno */
+            border: 1px solid var(--primary-color); /* Borda */
+            border-radius: 6px; /* Cantos arredondados */
+            transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+            font-size: 1rem; /* Tamanho da fonte */
+            text-align: center; /* Centraliza o texto */
+            align-self: flex-start; /* Alinha o botão à esquerda dentro do flex container */
+            z-index: 1; /* Acima do pseudo-elemento */
+        }
+
+        .project-card .matrix-link::before { /* Pseudo-elemento para o efeito de brilho no link */
+            content: ''; /* Conteúdo vazio */
+            position: absolute; /* Posicionamento absoluto */
+            top: 0; /* Alinha ao topo */
+            left: -100%; /* Começa fora da tela à esquerda */
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent); /* Gradiente de brilho */
+            transition: left 0.3s ease; /* Transição suave para o movimento */
+            z-index: 1; /* Acima do texto do link */
+            opacity: 0.3; /* Transparência do brilho */
+        }
+
+        .project-card .matrix-link:hover::before { /* Efeito de brilho ao passar o mouse no link */
+            left: 100%; /* Move o brilho para a direita */
+        }
+
+        .project-card .matrix-link:hover { /* Estilos de hover para o link do projeto */
+            background-color: var(--link-hover-bg); /* Fundo no hover */
+            color: var(--text-color); /* Cor do texto no hover */
+            box-shadow: 0 0 12px var(--project-link-shadow), 0 0 20px var(--project-link-shadow) inset; /* Sombra no hover */
+            transform: translateY(-2px); /* Move ligeiramente para cima */
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .github-link {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .github-link:hover {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        .technologies-grid { /* Layout de grade para as categorias de tecnologia */
+            display: grid; /* Usa grid para layout */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas */
+            gap: 2rem; /* Espaçamento entre os itens da grade */
+            margin-top: 2rem; /* Margem superior */
+        }
+
+        .technology-category { /* Estilos para cada cartão de categoria de tecnologia */
+            background-color: var(--header-bg); /* Fundo do cartão */
+            border: 1px solid var(--border-color); /* Borda */
+            border-radius: 12px; /* Cantos arredondados */
+            padding: 1.5rem; /* Padding interno */
+            box-shadow: 0 4px 15px var(--box-shadow-color); /* Sombra */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave para hover */
+        }
+
+        .technology-category:hover { /* Estilos de hover para a categoria de tecnologia */
+            transform: translateY(-5px); /* Move ligeiramente para cima */
+            box-shadow: 0 8px 20px var(--primary-color); /* Aumenta a sombra */
+        }
+
+        .technology-category h3 { /* Título da categoria de tecnologia */
+            color: var(--primary-color); /* Cor do título */
+            font-size: 1.6rem; /* Tamanho da fonte */
+            margin-top: 0; /* Remove margem superior */
+            margin-bottom: 1rem; /* Margem inferior */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            text-shadow: var(--heading-glow-shadow); /* Sombra de título (se houver) */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .technology-category ul { /* Lista de tecnologias dentro da categoria */
+            list-style: none; /* Remove marcadores de lista */
+            padding: 0; /* Remove padding padrão */
+            display: flex; /* Usa flexbox para layout */
+            flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            gap: 0.8rem; /* Espaçamento entre os itens */
+        }
+
+        .technology-category ul li { /* Estilos para cada item de tecnologia */
+            background: var(--background-color); /* Fundo do item de tecnologia */
+            color: var(--primary-color); /* Cor do texto */
+            padding: 0.6rem 1rem; /* Padding interno */
+            border-radius: 6px; /* Cantos arredondados */
+            box-shadow: 0 2px 8px var(--box-shadow-color); /* Sombra */
+            font-family: 'Inter', sans-serif; /* Fonte */
+            font-size: 0.95rem; /* Tamanho da fonte */
+            border: 1px solid var(--border-color); /* Borda */
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Transições suaves */
+        }
+
+        .technology-category ul li:hover { /* Estilos de hover para o item de tecnologia */
+            background-color: var(--primary-color); /* Fundo no hover */
+            color: var(--background-color); /* Inverte a cor do texto no hover */
+            transform: scale(1.05); /* Aumenta ligeiramente */
+        }
+
+        .carousel-container { /* Contêiner do carrossel de imagens */
+            position: relative; /* Para posicionamento dos botões */
+            max-width: 800px; /* Largura máxima */
+            margin: 2rem auto; /* Margem superior/inferior e centralização horizontal */
+            overflow: hidden; /* Esconde o excesso das imagens */
+            border-radius: 12px; /* Cantos arredondados */
+            box-shadow: 0 8px 20px var(--box-shadow-color); /* Sombra */
+            background-color: var(--header-bg); /* Fundo */
+        }
+
+        .carousel { /* Contêiner das imagens do carrossel */
+            display: flex; /* Usa flexbox para as imagens */
+            transition: transform 0.5s ease-in-out; /* Transição suave para o movimento do carrossel */
+        }
+
+        .carousel-image { /* Estilos para cada imagem do carrossel */
+            min-width: 100%; /* Garante que cada imagem ocupe a largura total do contêiner */
+            height: auto; /* Altura automática para manter a proporção */
+            display: block; /* Remove espaços extras */
+            border-radius: 12px; /* Cantos arredondados */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves para hover */
+            cursor: pointer; /* Cursor de ponteiro no hover */
+            object-fit: cover; /* Garante que a imagem preencha o espaço */
+        }
+
+        .carousel-image:hover { /* Estilos de hover para a imagem do carrossel */
+            transform: scale(1.02); /* Aumenta ligeiramente */
+            box-shadow: 0 0 20px var(--primary-color); /* Aumenta a sombra */
+        }
+
+        .carousel-button { /* Estilos para os botões de navegação do carrossel */
+            position: absolute; /* Posicionamento absoluto */
+            top: 50%; /* Alinha ao meio verticalmente */
+            transform: translateY(-50%); /* Ajusta para centralizar perfeitamente */
+            background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+            color: var(--primary-color); /* Cor do ícone */
+            border: 1px solid var(--primary-color); /* Borda */
+            padding: 0.8rem 1.2rem; /* Padding interno */
+            cursor: pointer; /* Cursor de ponteiro */
+            z-index: 10; /* Acima das imagens */
+            font-size: 1.8rem; /* Tamanho da fonte do ícone */
+            border-radius: 50%; /* Torna o botão redondo */
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+            display: flex; /* Usa flexbox para centralizar o ícone */
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: center; /* Centraliza horizontalmente */
+        }
+
+        .carousel-button.prev { /* Botão "anterior" */
+            left: 15px; /* Posição à esquerda */
+        }
+
+        .carousel-button.next { /* Botão "próximo" */
+            right: 15px; /* Posição à direita */
+        }
+
+        .carousel-button:hover { /* Estilos de hover para os botões do carrossel */
+            background-color: var(--primary-color); /* Fundo no hover */
+            color: var(--background-color); /* Inverte a cor do texto no hover */
+            transform: translateY(-50%) scale(1.1); /* Aumenta ligeiramente */
+            box-shadow: 0 0 15px var(--primary-color); /* Aumenta a sombra */
+        }
+
+        footer { /* Estilos para o rodapé da página */
+            text-align: center; /* Centraliza o texto */
+            padding: 2rem 0; /* Padding superior e inferior */
+            background-color: var(--header-bg); /* Fundo do rodapé */
+            color: var(--footer-color); /* Cor do texto do rodapé */
+            margin-top: 3rem; /* Margem superior */
+            font-size: 1rem; /* Tamanho da fonte */
+            box-shadow: 0 -4px 10px var(--box-shadow-color); /* Sombra acima do rodapé */
+            font-family: 'Inter', sans-serif; /* Fonte */
+        }
+
+        footer p { /* Parágrafos no rodapé */
+            margin: 0.8rem 0; /* Margem superior e inferior */
+        }
+
+        footer p:first-child { /* Primeiro parágrafo no rodapé */
+            font-weight: bold; /* Negrito */
+            color: var(--primary-color); /* Cor primária */
+        }
+
+        .social-links { /* Contêiner para os links de redes sociais */
+            display: flex; /* Usa flexbox para layout */
+            justify-content: center; /* Centraliza os links horizontalmente */
+            gap: 1.5rem; /* Espaçamento entre os links */
+            margin-top: 1rem; /* Margem superior */
+        }
+
+        .social-links a { /* Estilos para cada link de rede social */
+            color: var(--text-color); /* Cor do texto */
+            text-decoration: none; /* Remove sublinhado */
+            font-size: 1.1rem; /* Tamanho da fonte */
+            transition: color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+            display: flex; /* Usa flexbox para alinhar ícone e texto */
+            align-items: center; /* Centraliza verticalmente */
+        }
+
+        .social-links a:hover { /* Estilos de hover para links de redes sociais */
+            color: var(--primary-color); /* Cor no hover */
+            transform: translateY(-3px); /* Move ligeiramente para cima */
+        }
+
+        .social-links img { /* Estilos para as imagens de ícones de redes sociais (se usadas) */
+            width: 24px; /* Largura */
+            height: 24px; /* Altura */
+            vertical-align: middle; /* Alinhamento vertical */
+            margin-right: 8px; /* Margem à direita */
+            filter: invert(var(--invert-icon, 0)); /* Inverte a cor do ícone com base na variável do tema */
+        }
+
+        /* Efeito Matrix no mouse */
+        .matrix-effect { /* Estilos para os caracteres do efeito Matrix */
+            position: absolute; /* Posicionamento absoluto */
+            font-size: 16px; /* Tamanho da fonte */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            color: var(--primary-color); /* Cor do caractere */
+            opacity: 0.8; /* Transparência */
+            pointer-events: none; /* Ignora eventos do mouse */
+            animation: matrix-fall 1.5s linear forwards; /* Animação de queda */
+            text-shadow: 0 0 5px var(--primary-color); /* Brilho sutil */
+            z-index: 9999; /* Garante que esteja acima de outros elementos */
+        }
+
+        @keyframes matrix-fall { /* Animação de queda dos caracteres Matrix */
+            0% {
+                transform: translateY(0) scale(1); /* Começa na posição original e tamanho normal */
+                opacity: 1; /* Totalmente visível */
+            }
+            100% {
+                transform: translateY(50px) scale(0.5); /* Cai 50px e diminui para 50% do tamanho */
+                opacity: 0; /* Desaparece */
+            }
+        }
+
+        /* Botão de Voltar ao Topo */
+        #scroll-to-top { /* Estilos para o botão de voltar ao topo */
+            position: fixed; /* Fixa o botão na tela */
+            bottom: 25px; /* 25px do fundo */
+            right: 25px; /* 25px da direita */
+            background-color: var(--primary-color); /* Cor de fundo */
+            color: var(--background-color); /* Cor do texto/ícone (invertida) */
+            border: none; /* Sem borda */
+            border-radius: 50%; /* Redondo */
+            width: 50px; /* Largura */
+            height: 50px; /* Altura */
+            font-size: 1.5rem; /* Tamanho do ícone */
+            display: flex; /* Usa flexbox para centralizar o ícone */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            cursor: pointer; /* Cursor de ponteiro */
+            box-shadow: 0 4px 10px var(--box-shadow-color); /* Sombra */
+            transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Transições suaves */
+            opacity: 0; /* Começa invisível */
+            visibility: hidden; /* Esconde completamente quando não visível */
+            z-index: 999; /* Acima da maioria dos elementos */
+        }
+
+        #scroll-to-top.show { /* Estilo quando o botão deve ser visível */
+            opacity: 1; /* Torna visível */
+            visibility: visible; /* Torna visível */
+        }
+
+        #scroll-to-top:hover { /* Estilos de hover para o botão de voltar ao topo */
+            background-color: var(--darker-primary-color); /* Fundo no hover */
+            transform: translateY(-5px); /* Move ligeiramente para cima */
+            box-shadow: 0 6px 15px var(--primary-color); /* Aumenta a sombra */
+        }
+
+        /* Botão de Mudar Tema */
+        #theme-toggle { /* Estilos para o botão de mudar tema */
+            background-color: var(--header-bg); /* Fundo consistente com o cabeçalho */
+            color: var(--primary-color); /* Cor do texto/ícone */
+            border: 1px solid var(--primary-color); /* Borda */
+            padding: 0.6rem 1.2rem; /* Padding interno */
+            border-radius: 6px; /* Cantos arredondados */
+            cursor: pointer; /* Cursor de ponteiro */
+            font-family: 'Courier Prime', monospace; /* Fonte específica */
+            font-size: 1rem; /* Tamanho da fonte */
+            transition: all 0.3s ease; /* Transições suaves */
+            position: absolute; /* Posicionamento absoluto */
+            top: 1.5rem; /* 1.5rem do topo */
+            right: 2rem; /* 2rem da direita */
+            z-index: 1; /* Acima do conteúdo normal */
+        }
+
+        #theme-toggle:hover { /* Estilos de hover para o botão de mudar tema */
+            background-color: var(--primary-color); /* Fundo no hover */
+            color: var(--background-color); /* Inverte a cor do texto no hover */
+            box-shadow: 0 0 15px var(--primary-color); /* Aumenta a sombra */
+        }
+
+        /* Responsividade */
+        @media (max-width: 900px) { /* Estilos para telas com largura máxima de 900px */
+            section {
+                margin: 2rem 1rem; /* Margem ajustada */
+                padding: 2.5rem 1.5rem; /* Padding ajustado */
+            }
+        }
+
+        @media (max-width: 768px) { /* Estilos para telas com largura máxima de 768px (tablets) */
+            header h1 {
+                font-size: 2.2rem; /* Tamanho da fonte ajustado */
+            }
+
+            .profile-section img {
+                width: 140px; /* Largura ajustada */
+                height: 140px; /* Altura ajustada */
+            }
+
+            nav {
+                gap: 1rem; /* Espaçamento ajustado */
+                margin-top: 1rem; /* Margem ajustada */
+            }
+
+            nav a {
+                padding: 0.5rem 1rem; /* Padding ajustado */
+                font-size: 1rem; /* Tamanho da fonte ajustado */
+            }
+
+            section h2 {
+                font-size: 2.2rem; /* Tamanho da fonte ajustado */
+                margin-bottom: 1.5rem; /* Margem ajustada */
+            }
+
+            .project-grid, .technologies-grid {
+                grid-template-columns: 1fr; /* Uma única coluna */
+            }
+
+            .project-card, .technology-category {
+                padding: 1.2rem; /* Padding ajustado */
+            }
+
+            .project-card h3 {
+                font-size: 1.6rem; /* Tamanho da fonte ajustado */
+            }
+
+            .carousel-button {
+                font-size: 1.4rem; /* Tamanho da fonte ajustado */
+                padding: 0.6rem 1rem; /* Padding ajustado */
+            }
+
+            #theme-toggle {
+                top: 1rem; /* Posição ajustada */
+                right: 1rem; /* Posição ajustada */
+                padding: 0.5rem 1rem; /* Padding ajustado */
+                font-size: 0.9rem; /* Tamanho da fonte ajustado */
+            }
+
+            .matrix-effect {
+                font-size: 14px; /* Tamanho da fonte ajustado */
+            }
+        }
+
+        @media (max-width: 480px) { /* Estilos para telas com largura máxima de 480px (celulares) */
+            header h1 {
+                font-size: 1.8rem; /* Tamanho da fonte ajustado */
+            }
+
+            .profile-section img {
+                width: 100px; /* Largura ajustada */
+                height: 100px; /* Altura ajustada */
+            }
+
+            nav {
+                flex-direction: column; /* Itens em coluna */
+                gap: 0.8rem; /* Espaçamento ajustado */
+            }
+
+            nav a {
+                width: 80%; /* Largura ajustada */
+                text-align: center; /* Centraliza o texto */
+                font-size: 0.9rem; /* Tamanho da fonte ajustado */
+            }
+
+            section {
+                padding: 1.5rem 1rem; /* Padding ajustado */
+                margin: 1.5rem 0.8rem; /* Margem ajustada */
+            }
+
+            section h2 {
+                font-size: 1.8rem; /* Tamanho da fonte ajustado */
+            }
+
+            .project-card h3 {
+                font-size: 1.4rem; /* Tamanho da fonte ajustado */
+            }
+
+            .project-card p {
+                font-size: 0.9rem; /* Tamanho da fonte ajustado */
+            }
+
+            .project-card .matrix-link {
+                padding: 0.5rem 1rem; /* Padding ajustado */
+                font-size: 0.9rem; /* Tamanho da fonte ajustado */
+            }
+
+            .technology-category h3 {
+                font-size: 1.4rem; /* Tamanho da fonte ajustado */
+            }
+
+            .technology-category ul li {
+                padding: 0.5rem 0.8rem; /* Padding ajustado */
+                font-size: 0.85rem; /* Tamanho da fonte ajustado */
+            }
+
+            .carousel-button {
+                font-size: 1.2rem; /* Tamanho da fonte ajustado */
+                padding: 0.5rem 0.8rem; /* Padding ajustado */
+            }
+
+            #scroll-to-top {
+                width: 40px; /* Largura ajustada */
+                height: 40px; /* Altura ajustada */
+                font-size: 1.2rem; /* Tamanho da fonte ajustado */
+                bottom: 15px; /* Posição ajustada */
+                right: 15px; /* Posição ajustada */
+            }
+
+            .matrix-effect {
+                font-size: 12px; /* Tamanho da fonte ajustado */
+            }
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .creative-lab-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            width: 250px;
+        }
+
+        .creative-lab-item:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .creative-lab-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .creative-lab-item .caption {
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            color: #555;
+            margin-top: 1rem;
+        }
+
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none; /* Começa escondido */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .lightbox.show {
+            display: flex; /* Mostra o lightbox */
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 85vw;
+            max-height: 85vh;
+            text-align: center;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 30px var(--primary-color);
+        }
+
+        #lightbox-caption {
+            color: #fff;
+            margin-top: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+
+        #creative-lab-prompt {
+            color: #ccc;
+            margin-top: 1rem;
+            font-family: 'Courier Prime', monospace;
+            font-size: 1rem;
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .lightbox-close, .lightbox-prev, .lightbox-next {
+            position: absolute;
+            cursor: pointer;
+            color: #fff;
+            font-size: 2.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+            z-index: 1001;
+        }
+
+        .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 30px;
+        }
+
+        .lightbox-prev {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        #contact {
+            max-width: 600px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-family: 'Courier Prime', monospace;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--header-bg);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        #contact button {
+            width: 100%;
+        }
+
+        .call-to-action {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .call-to-action a {
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--darker-primary-color));
+            border: none;
+            color: #fff;
+        }
+
+        .submit-button:hover {
+            background: linear-gradient(45deg, var(--darker-primary-color), var(--primary-color));
+        }
